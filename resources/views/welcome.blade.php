@@ -64,7 +64,6 @@
             </div>
         </div>
     </section>
-
     <section class="awe-section-2">
         <section class="section_policy">
             <div class="container">
@@ -1234,10 +1233,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                        <a href="{{ url('/') }}/quang-ninh"><img src="{{ url('/') }}/images/banner.jpg" alt=""></a>
+                        <a href="{{ url('/') }}/cities/quang-ninh"><img src="{{ url('/') }}/images/banner.jpg" alt=""></a>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <a href="{{ url('/') }}/tay-bac-bo"><img src="{{ url('/') }}/images/banner2.jpg" alt=""></a>
+                        <a href="{{ url('/') }}/cities/tay-bac-bo"><img src="{{ url('/') }}/images/banner2.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -1245,7 +1244,6 @@
     </section>
 
     <section class="awe-section-5">
-
         <section class="section_product sec2">
             <img class="bottom-left-leaf hidden-xs" src="{{ url('/') }}/images/bottom-left-leaf.png">
             <div class="container">
@@ -2894,7 +2892,6 @@
     </section>
 
     <section class="awe-section-7">
-
         <section class="section_product sec3">
             <img class="bottom-right-leaf hidden-xs" src="{{ url('/') }}/images/bottom-right-leaf.png">
             <div class="container">
@@ -2902,31 +2899,24 @@
                     <div class="wrap-title">
                         <h3 class="sec3_title">Đặc sản Miền Trung</h3>
                         <ul class="tabs tabs-title clearfix">
-
                             <li class="tab-link tab-link-mobile current" data-tab="tab-1">
                                 <span></span>
                             </li>
-
                         </ul>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 visible-lg">
                             <a href="{{ url('/') }}/"><img src="{{ url('/') }}/images/sec3.png"></a>
                         </div>
-
                         <div class="col-xs-12 col-lg-9">
-
                             <div id="tab-1" class="tab-content clearfix current">
                                 <div class="row">
                                     <div class="owl-carousel owl-sec3 not-dqowl owl-loaded owl-drag">
-
                                         <div class="owl-stage-outer">
                                             <div class="owl-stage" style="transform: translate3d(-692px, 0px, 0px); transition: all 0.25s ease 0s; width: 1846px;">
                                                 <div class="owl-item" style="width: 230.75px;">
                                                     <div>
-
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
                                                                 <span class="dis_per">-12%</span>
                                                                 <div class="image-product">
@@ -2934,82 +2924,63 @@
                                                                         <img src="{{ url('/') }}/images/bao-tu-ca-ngu-dac-san-phu-yen-dac-san-mien-trung-dac-san-chat-3-min.jpg" alt="Bao Tử Cá Ngừ Phú Yên">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/bao-tu-ca-ngu-phu-yen-dac-san-phu-yen" data-handle="bao-tu-ca-ngu-phu-yen-dac-san-phu-yen" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/bao-tu-ca-ngu-phu-yen-dac-san-phu-yen" title="Bao Tử Cá Ngừ Phú Yên"><h3 class="product-name">Bao Tử Cá Ngừ Phú Yên</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15915841"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">150.000₫</span>
-
                                                                         <span class="line"></span>
                                                                         <span class="first-price">170.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> BAO TỬ CÁ NGỪ ĐẠI DƯƠNG PHÚ YÊN – VỪA NGON LẠI CÒN BỔ Bao tử Cá Ngừ Đại Dương là một trong những món ăn khoái khẩu của bậc sành...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15915841" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input class="hidden" type="hidden" name="variantId" value="27947134">
                                                                             <button class="btn add-cart" title="Chọn sản phẩm" type="button" onclick="window.location.href=&#39;/bao-tu-ca-ngu-phu-yen-dac-san-phu-yen&#39;">
                                                                                 Tùy chọn</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
-
                                                                 <div class="image-product">
                                                                     <a href="{{ url('/') }}/yen-sao-khanh-hoa-chinh-hieu-hop-5g" title="Yến Sào nguyên chất làm sạch (Hộp 5g)">
                                                                         <img src="{{ url('/') }}/images/yen-sao-khanh-hoa.jpg" alt="Yến Sào nguyên chất làm sạch (Hộp 5g)">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/yen-sao-khanh-hoa-chinh-hieu-hop-5g" data-handle="yen-sao-khanh-hoa-chinh-hieu-hop-5g" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/yen-sao-khanh-hoa-chinh-hieu-hop-5g" title="Yến Sào nguyên chất làm sạch (Hộp 5g)"><h3 class="product-name">Yến Sào nguyên chất làm sạch (Hộp 5g)</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15989341"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">341.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> Yến sào đảo yến thiên nhiên Khánh hòa(tinh chế): đã được làm sạch toàn bộ bởi sự khéo léo của người công nhân. Sản phẩm đã được làm sạch, loại bỏ ...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15989341" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input type="hidden" name="variantId" value="28131356">
                                                                             <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="owl-item" style="width: 230.75px;">
                                                     <div>
-
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
                                                                 <span class="dis_per">-20%</span>
                                                                 <div class="image-product">
@@ -3017,31 +2988,24 @@
                                                                         <img src="{{ url('/') }}/images/trung-ca-ngu-phu-yen-dac-san-mien-trung-dac-san-chat.jpg" alt="Trứng Cá Ngừ Phú Yên">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/trung-ca-ngu-phu-yen-dac-san-mien-trung" data-handle="trung-ca-ngu-phu-yen-dac-san-mien-trung" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/trung-ca-ngu-phu-yen-dac-san-mien-trung" title="Trứng Cá Ngừ Phú Yên"><h3 class="product-name">Trứng Cá Ngừ Phú Yên</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15915750"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">80.000₫</span>
-
                                                                         <span class="line"></span>
                                                                         <span class="first-price">100.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> TRỨNG CÁ NGỪ ĐẠI DƯƠNG – CỰC PHẨM CỦA VÙNG ĐẤT PHÚ YÊN Phú Yên được mệnh danh là “xứ sở hoa vàng trên cỏ xanh” với hệ thống cảnh quan...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15915750" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input type="hidden" name="variantId" value="27947020">
                                                                             <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -3049,7 +3013,6 @@
                                                         </div>
 
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
                                                                 <span class="dis_per">-22%</span>
                                                                 <div class="image-product">
@@ -3057,44 +3020,34 @@
                                                                         <img src="{{ url('/') }}/images/z1569185093502-fd065477727f0ba2986c6d838ae78226.jpg" alt="Mắt Cá Ngừ Phú Yên">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/mat-ca-ngu-dac-san-phu-yen" data-handle="mat-ca-ngu-dac-san-phu-yen" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/mat-ca-ngu-dac-san-phu-yen" title="Mắt Cá Ngừ Phú Yên"><h3 class="product-name">Mắt Cá Ngừ Phú Yên</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15915692"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">70.000₫</span>
-
                                                                         <span class="line"></span>
                                                                         <span class="first-price">90.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> MẮT CÁ NGỪ PHÚ YÊN – NHÌN LÀ MÊ ĂN LÀ PHÊ Đến với vùng biển Phú Yên, ngoài ngắm cảnh đẹp hùng vĩ nơi đây du khách còn có thể thưởng t...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15915692" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input type="hidden" name="variantId" value="27946933">
                                                                             <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="owl-item" style="width: 230.75px;">
                                                     <div>
-
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
                                                                 <span class="dis_per">-12%</span>
                                                                 <div class="image-product">
@@ -3102,31 +3055,24 @@
                                                                         <img src="{{ url('/') }}/images/ca-ngu-tuoi-dac-san-phu-yen-dac-san-mien-trung-dac-san-chat-min.jpg" alt="Cá Ngừ Đại Dương Fillet Tươi">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/ca-ngu-tuoi-dac-san-phu-yen-dac-san-mien-trung" data-handle="ca-ngu-tuoi-dac-san-phu-yen-dac-san-mien-trung" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/ca-ngu-tuoi-dac-san-phu-yen-dac-san-mien-trung" title="Cá Ngừ Đại Dương Fillet Tươi"><h3 class="product-name">Cá Ngừ Đại Dương Fillet Tươi</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15980046"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">175.000₫</span>
-
                                                                         <span class="line"></span>
                                                                         <span class="first-price">200.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> Cá ngừ đại dương hay cá bò gù sinh sống tại những vùng biển ấm. Tại Việt Nam, cá ngừ đại dương có nhiều tại vùng biển Miền Trung. Đây cũng là s...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15980046" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input type="hidden" name="variantId" value="28102116">
                                                                             <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -3134,36 +3080,28 @@
                                                         </div>
 
                                                         <div class="col-xs-12 p-item">
-
                                                             <div class="wrap-product">
-
                                                                 <div class="image-product">
                                                                     <a href="{{ url('/') }}/yen-tinh-che-su-dung-duong-an-kieng-5g" title="Yến Tinh Chế Sử Dụng Đường Ăn Kiêng (hộp 5g)">
                                                                         <img src="{{ url('/') }}/images/012f-min.jpg" alt="Yến Tinh Chế Sử Dụng Đường Ăn Kiêng (hộp 5g)">
                                                                     </a>
                                                                     <div class="area-btn-quickview">
-
                                                                         <a href="{{ url('/') }}/yen-tinh-che-su-dung-duong-an-kieng-5g" data-handle="yen-tinh-che-su-dung-duong-an-kieng-5g" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-info">
                                                                     <a href="{{ url('/') }}/yen-tinh-che-su-dung-duong-an-kieng-5g" title="Yến Tinh Chế Sử Dụng Đường Ăn Kiêng (hộp 5g)"><h3 class="product-name">Yến Tinh Chế Sử Dụng Đường Ăn Kiêng (hộp 5g)</h3></a>
                                                                     <div class="bizweb-product-reviews-badge" data-id="15989495"></div>
                                                                     <p class="product-price">
-
                                                                         <span class="last-price">341.000₫</span>
-
                                                                     </p>
                                                                     <p class="p-content"> Sản phẩm Yến sào đảo yến thiên nhiên tinh chế sử dụng đường ăn kiêng 5g - MS 012F, mẫu hộp 5g yến, kèm theo một lượng đường dành cho người ăn kiên...</p>
                                                                 </div>
                                                                 <div class="product-action">
                                                                     <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15989495" enctype="multipart/form-data">
                                                                         <div class="area-btn-addcart">
-
                                                                             <input type="hidden" name="variantId" value="28131596">
                                                                             <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>

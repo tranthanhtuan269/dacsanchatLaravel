@@ -105,19 +105,9 @@
                                                 <div id="collapse-san-pham" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                         <ul>
-
-                                                            <li><a href="{{ url('/') }}/cities/quang-ninh" class="">Quảng Ninh</a></li>
-
-                                                            <li><a href="{{ url('/') }}/cities/tay-bac-bo" class="">Tây Bắc Bộ</a></li>
-
-                                                            <li><a href="{{ url('/') }}/cities/khanh-hoa" class="">Khánh Hòa</a></li>
-
-                                                            <li><a href="{{ url('/') }}/cities/da-nang" class="">Đà Nẵng</a></li>
-
-                                                            <li><a href="{{ url('/') }}/cities/tp-ho-chi-minh" class="">TP. Hồ Chí Minh</a></li>
-
-                                                            <li><a href="{{ url('/') }}/cities/tay-nguyen" class="">Tây Nguyên</a></li>
-
+                                                            @foreach($cities as $city)
+                                                            <li><a href="{{ url('/') }}/cities/{{ $city->slug }}" class="">{{ $city->name }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -166,19 +156,9 @@
                                     <i class="hidden fa fa-angle-down icon-angle-down" aria-hidden="true"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-cate">
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/quang-ninh">Quảng Ninh</a></li>
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/tay-bac-bo">Tây Bắc Bộ</a></li>
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/khanh-hoa">Khánh Hòa</a></li>
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/da-nang">Đà Nẵng</a></li>
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/tp-ho-chi-minh">TP. Hồ Chí Minh</a></li>
-
-                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/tay-nguyen">Tây Nguyên</a></li>
-
+                                    @foreach($cities as $city)
+                                    <li class="nav-item "><a class="nav-link" href="{{ url('/') }}/cities/{{ $city->slug }}">{{ $city->name }}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -197,25 +177,9 @@
                                             <div class="level0-wrapper2">
                                                 <div class="nav-block nav-block-center">
                                                     <ul class="level0">
-
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/quang-ninh"><h2><span>Quảng Ninh</span></h2></a>
-
-                                                        </li>
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/tay-bac-bo"><h2><span>Tây Bắc Bộ</span></h2></a>
-
-                                                        </li>
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/khanh-hoa"><h2><span>Khánh Hòa</span></h2></a>
-
-                                                        </li>
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/da-nang"><h2><span>Đà Nẵng</span></h2></a>
-
-                                                        </li>
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/tp-ho-chi-minh"><h2><span>TP. Hồ Chí Minh</span></h2></a>
-
-                                                        </li>
-                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/tay-nguyen"><h2><span>Tây Nguyên</span></h2></a>
-
-                                                        </li>
+                                                        @foreach($cities as $city)
+                                                        <li class="level1 item"> <a href="{{ url('/') }}/cities/{{ $city->slug }}"><h2><span>{{ $city->name }}</span></h2></a></li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
