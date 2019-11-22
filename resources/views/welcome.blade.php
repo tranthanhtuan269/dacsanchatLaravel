@@ -6,7 +6,6 @@
     <section class="awe-section-1">
         <div class="container">
             <div class="home-slider owl-carousel owl-loaded owl-drag" data-loop="1" data-md-items="1" data-sm-items="1" data-xs-items="1" data-margin="0">
-
                 <div class="owl-stage-outer">
                     <div class="owl-stage" style="transform: translate3d(-1736px, 0px, 0px); transition: all 0s ease 0s; width: 4340px;">
                         <div class="owl-item cloned" style="width: 868px;">
@@ -134,60 +133,58 @@
                 <h3 class="sec1_title">Sản Phẩm Khuyến Mãi</h3>
                 <div class="e-tabs">
                     <ul class="tabs tabs-title special-products clearfix">
-                        <li class="tab-link tab-link-mobile current" data-tab="tab-1">
-                            <span>Đặc sản Quảng Ninh</span>
+                        @foreach($citySpecial as $key=>$cty)
+                        @if($key == 0)
+                        <li class="tab-link tab-link-mobile current" data-tab="tab-{{ $key }}">
+                            <span>Đặc sản {{ $cty->name }}</span>
                         </li>
-                        <li class="tab-link tab-link-mobile" data-tab="tab-2">
-                            <span>Đặc sản Tây Bắc Bộ</span>
+                        @else
+                        <li class="tab-link tab-link-mobile" data-tab="tab-{{ $key }}">
+                            <span>Đặc sản {{ $cty->name }}</span>
                         </li>
-                        <li class="tab-link tab-link-mobile" data-tab="tab-4">
-                            <span>Đặc sản Miền Trung</span>
-                        </li>
+                        @endif
+                        @endforeach
                     </ul>
 
-                    <div id="tab-1" class="tab-content clearfix current">
+                    @foreach($citySpecial as $key=>$cty)
+                    <div id="tab-{{ $key }}" class="tab-content clearfix current">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-4">
                                 <div class="row">
+                                    @foreach($cty->products as $product)
                                     <div class="col-xs-6 p-item">
                                         <div class="wrap-product">
                                             <span class="dis_per">-8%</span>
                                             <div class="image-product">
-                                                <a href="{{ url('/') }}/cha-muc-gia-tay-dac-san-ha-long" title="Chả Mực Giã Tay">
-                                                    <img src="{{ url('/') }}/images/cha-muc-gia-tay-quang-ninh.jpg" alt="Chả Mực Giã Tay">
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}">
+                                                    <img src="{{ url('/') }}/images/{{ $product->image }}" alt="{{ $product->name }}">
                                                 </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/cha-muc-gia-tay-dac-san-ha-long" data-handle="cha-muc-gia-tay-dac-san-ha-long" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
+                                            <div class="area-btn-quickview" data-product-id="{{ $product->id }}">
+                                                    <a href="{{ url('/') }}/product/{{ $product->slug }}" data-handle="{{ $product->name }}" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <a href="{{ url('/') }}/cha-muc-gia-tay-dac-san-ha-long" title="Chả Mực Giã Tay"><h3 class="product-name">Chả Mực Giã Tay</h3></a>
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}"><h3 class="product-name">{{ $product->name }}</h3></a>
                                                 <div class="bizweb-product-reviews-badge" data-id="15779770"></div>
                                                 <p class="product-price">
-
-                                                    <span class="last-price">275.000₫</span>
+                                                    <span class="last-price">{{ $product->sale }}</span>
 
                                                     <span class="line"></span>
-                                                    <span class="first-price">300.000₫</span>
-
+                                                    <span class="first-price">{{ $product->price }}</span>
                                                 </p>
-                                                <p class="p-content"> CHẢ MỰC HẠ LONG – MÓN ĂN ĐẶC SẢN CỦA VÙNG BIỂN QUẢNG NINH Chả mực của vùng biển Quảng Ninh là một trong những món ăn đặc sản của ngườ...</p>
+                                                <p class="p-content"> {{ $product->address }}</p>
                                             </div>
                                             <div class="product-action">
                                                 <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15779770" enctype="multipart/form-data">
                                                     <div class="area-btn-addcart">
-
                                                         <input type="hidden" name="variantId" value="27556227">
                                                         <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-
+                                    @endforeach
                                     <div class="col-xs-6 p-item">
 
                                         <div class="wrap-product">
@@ -506,6 +503,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
                     <div id="tab-2" class="tab-content clearfix">
                         <div class="row">
@@ -2806,89 +2804,6 @@
                 </div>
             </div>
         </section>
-        <!---->
-        <script>
-            (function($) {
-                "user strict";
-                $.fn.Dqdt_CountDown = function(options) {
-                    return this.each(function() {
-                        // get instance of the dqdt.
-                        new $.Dqdt_CountDown(this, options);
-                    });
-                }
-                $.Dqdt_CountDown = function(obj, options) {
-
-                    this.options = $.extend({
-                        autoStart: true,
-                        LeadingZero: true,
-                        DisplayFormat: "<div><span>%%D%%</span></div><div><span>%%H%%</span></div><div><span>%%M%%</span></div><div><span>%%S%%</span></div>",
-                        FinishMessage: "<div><span>00</span></div><div><span>00</span></div><div><span>00</span></div><div><span>00</span></div>",
-                        CountActive: true,
-                        TargetDate: null
-                    }, options || {});
-                    if (this.options.TargetDate == null || this.options.TargetDate == '') {
-                        return;
-                    }
-                    this.timer = null;
-                    this.element = obj;
-                    this.CountStepper = -1;
-                    this.CountStepper = Math.ceil(this.CountStepper);
-                    this.SetTimeOutPeriod = (Math.abs(this.CountStepper) - 1) * 1000 + 990;
-                    var dthen = new Date(this.options.TargetDate);
-                    var dnow = new Date();
-                    if (this.CountStepper > 0) {
-                        ddiff = new Date(dnow - dthen);
-                    } else {
-                        ddiff = new Date(dthen - dnow);
-                    }
-                    gsecs = Math.floor(ddiff.valueOf() / 1000);
-                    this.CountBack(gsecs, this);
-
-                };
-                $.Dqdt_CountDown.fn = $.Dqdt_CountDown.prototype;
-                $.Dqdt_CountDown.fn.extend = $.Dqdt_CountDown.extend = $.extend;
-                $.Dqdt_CountDown.fn.extend({
-                    calculateDate: function(secs, num1, num2) {
-                        var s = ((Math.floor(secs / num1)) % num2).toString();
-                        if (this.options.LeadingZero && s.length < 2) {
-                            s = "0" + s;
-                        }
-                        return "<span>" + s + "</span>";
-                    },
-                    CountBack: function(secs, self) {
-                        if (secs < 0) {
-                            self.element.innerHTML = '<div class="lof-labelexpired"> ' + self.options.FinishMessage + "</div>";
-                            return;
-                        }
-                        clearInterval(self.timer);
-                        DisplayStr = self.options.DisplayFormat.replace(/%%D%%/g, self.calculateDate(secs, 86400, 100000));
-                        DisplayStr = DisplayStr.replace(/%%H%%/g, self.calculateDate(secs, 3600, 24));
-                        DisplayStr = DisplayStr.replace(/%%M%%/g, self.calculateDate(secs, 60, 60));
-                        DisplayStr = DisplayStr.replace(/%%S%%/g, self.calculateDate(secs, 1, 60));
-                        self.element.innerHTML = DisplayStr;
-                        if (self.options.CountActive) {
-                            self.timer = null;
-                            self.timer = setTimeout(function() {
-                                self.CountBack((secs + self.CountStepper), self);
-                            }, (self.SetTimeOutPeriod));
-                        }
-                    }
-
-                });
-
-                $(document).ready(function() {
-                    $('[data-countdown="countdown"]').each(function(index, el) {
-                        var $this = $(this);
-                        var $date = $this.data('date').split("-");
-                        $this.Dqdt_CountDown({
-                            TargetDate: $date[0] + "/" + $date[1] + "/" + $date[2] + " " + $date[3] + ":" + $date[4] + ":" + $date[5],
-                            DisplayFormat: "<div class=\"block-timer\"><p>%%D%%<c>DAYS</c></p></div><div class=\"block-timer\"><p>%%H%%<c>HRS</c></p></div><div class=\"block-timer\"><p>%%M%%<c>MINS</c></p></div><div class=\"block-timer\"><p>%%S%%<c>SECS</c></p></div>",
-                            FinishMessage: "<div class=\"block-timer\"><p>00</p></div><div class=\"block-timer\"><p>00</p></div><div class=\"block-timer\"><p>00</p></div><div class=\"block-timer\"><p>00</p></div>"
-                        });
-                    });
-                });
-            })(jQuery);
-        </script>
     </section>
 
     <section class="awe-section-7">
@@ -3771,23 +3686,18 @@
                     <div class="clearfix image-block">
                         <span class="view_full_size">
                             <a class="img-product qv-link" title="" href="/sa-sung">
-                                <img id="product-featured-image-quickview" class="img-responsive product-featured-image-quickview" src="//bizweb.dktcdn.net/100/364/380/products/sa-sung-dac-san-chat-1-min.jpg?v=1570768000537" alt="quickview">
+                                <img id="product-featured-image-quickview" class="img-responsive product-featured-image-quickview" src="" alt="quickview">
                             </a>
                         </span>
                         <div class="loading-imgquickview" style="display:none;"></div>
-                    </div>
-                    <div class="more-view-wrapper clearfix">
-                        <div id="thumbs_list_quickview">
-                            <ul class="product-photo-thumbs quickview-more-views-owlslider owl-loaded owl-drag" id="thumblist_quickview" style="visibility: visible;"><div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 148px;"><div class="owl-item active" style="width: 68.75px; margin-right: 5px;"><li><a href="javascript:void(0)" data-imageid="15808637" "="" data-zoom-image="//bizweb.dktcdn.net/thumb/large/100/364/380/products/sa-sung-dac-san-chat-1-min.jpg"><img src="//bizweb.dktcdn.net/thumb/large/100/364/380/products/sa-sung-dac-san-chat-1-min.jpg" alt="Proimage"></a></li></div><div class="owl-item active" style="width: 68.75px; margin-right: 5px;"><li><a href="javascript:void(0)" data-imageid="15808637" "="" data-zoom-image="//bizweb.dktcdn.net/thumb/large/100/364/380/products/sa-sung-dac-san-chat.jpg"><img src="//bizweb.dktcdn.net/thumb/large/100/364/380/products/sa-sung-dac-san-chat.jpg" alt="Proimage"></a></li></div></div></div><div class="owl-nav disabled"><div class="owl-prev disabled"><i class="fa fa-angle-left"></i></div><div class="owl-next disabled"><i class="fa fa-angle-right"></i></div></div><div class="owl-dots disabled"></div></ul>
-                        </div>
                     </div>
                 </div>
                 <div class="product-center-column product-info product-item col-xs-12 col-sm-7 col-md-7 product-info-right" id="product-15808637">
                     <h3><a class="qwp-name pro-name qv-link" href="/sa-sung">Sá Sùng</a></h3>
                     <div class="quickview-info">
-                        <span class="prices"><span class="price special-price">Liên hệ</span></span>
+                        <span class="prices"></span>
                     </div>
-                    <div class="product-description rte"><em>(Đang cập nhật ...)</em></div>
+                    <div class="product-description rte"><em></em></div>
                     <a href="/sa-sung" class="view-more">Xem chi tiết</a>
                     <form action="/cart/add" method="post" enctype="multipart/form-data" class="variants form-ajaxtocart" id="product-actions-15808637" style="display: none;">
                         <span class="price-product-detail hidden" style="opacity: 0;">
@@ -3827,11 +3737,6 @@
                             </a>
                         </span>
                         <div class="loading-imgquickview" style="display:none;"></div>
-                    </div>
-                    <div class="more-view-wrapper clearfix">
-                        <div id="thumbs_list_quickview">
-                            <ul class="product-photo-thumbs quickview-more-views-owlslider" id="thumblist_quickview"></ul>
-                        </div>
                     </div>
                 </div>
                 <div class="product-center-column product-info product-item col-xs-12 col-sm-7 col-md-7 product-info-right">

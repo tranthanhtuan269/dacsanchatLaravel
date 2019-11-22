@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $cities = City::get();
+        $cities = City::where('active', 1)->get();
         View::share('cities', $cities);
     }
 }

@@ -30,15 +30,23 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
+        'slug',
         'name',
-        'image',
+        'description',
+        'partner',
+        'tags',
+        'in_store',
         'price',
         'sale',
+        'image',
+        'alt_image',
+        'seo_title',
+        'seo_description',
+        'weight',
+        'unit_weight',
+        'short_description',
         'category_id',
-        'city_id',
-        'address',
-        'unit',
-        'active'
+        'city_id'
     ];
     
     public function category(){

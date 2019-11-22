@@ -34,6 +34,7 @@ class City extends Model
         'name',
         'slug',
         'image',
+        'saleoff',
         'active'
     ];
     

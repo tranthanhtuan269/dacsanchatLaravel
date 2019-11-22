@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\City;
+use Excel;
+use App\Imports\ProductsImport;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    public function welcome()
+    {
+        $citySpecial = City::where('saleoff', 1)->where('active', 1)->get();
+        return view('welcome', ['citySpecial' => $citySpecial]);
+    }
+
     public function index()
     {
         return view('home');
