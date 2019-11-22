@@ -50,6 +50,11 @@ class HomeController extends Controller
 
     public function test()
     {
+        Excel::import(new ProductsImport, public_path() . '/products_export.xls');
+    }
+
+    public function test2()
+    {
         $products = Product::get();
         foreach($products as $product){
             $product->city_id = $product->category->city_id;

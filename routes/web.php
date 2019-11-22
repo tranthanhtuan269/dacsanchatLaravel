@@ -15,6 +15,7 @@
 Auth::routes();
 Route::get('/', 'HomeController@welcome');
 Route::get('/test', 'HomeController@test')->name('test');
+Route::get('/test2', 'HomeController@test2')->name('test2');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/products/{id}/json', 'ProductController@showApi')->name('products.show-api');
