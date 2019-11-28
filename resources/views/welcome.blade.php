@@ -147,11 +147,12 @@
                     </ul>
 
                     @foreach($citySpecial as $key=>$cty)
-                    <div id="tab-{{ $key }}" class="tab-content clearfix current">
+                    <div id="tab-{{ $key }}" class="tab-content clearfix @if($key == 0) current @endif">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-4">
                                 <div class="row">
-                                    @foreach($cty->products as $product)
+                                    @foreach($cty->getProducts() as $count=>$product)
+                                    @if($count == 4) @break @endif
                                     <div class="col-xs-6 p-item">
                                         <div class="wrap-product">
                                             <span class="dis_per">-8%</span>
@@ -165,12 +166,9 @@
                                             </div>
                                             <div class="product-info">
                                                 <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}"><h3 class="product-name">{{ $product->name }}</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15779770"></div>
                                                 <p class="product-price">
-                                                    <span class="last-price">{{ $product->sale }}</span>
-
-                                                    <span class="line"></span>
-                                                    <span class="first-price">{{ $product->price }}</span>
+                                                    <span class="last-price">{{ number_format(floatval($product->sale), 0, ',', '.') }}đ</span>
+                                                    <span class="first-price">{{ number_format(floatval($product->price), 0, ',', '.') }}đ</span>
                                                 </p>
                                                 <p class="p-content"> {{ $product->address }}</p>
                                             </div>
@@ -185,149 +183,31 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                    <div class="col-xs-6 p-item">
-
-                                        <div class="wrap-product">
-
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/sa-sung" title="Sá Sùng">
-                                                    <img src="{{ url('/') }}/images/sa-sung-dac-san-chat-1-min.jpg" alt="Sá Sùng">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/sa-sung" data-handle="sa-sung" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/sa-sung" title="Sá Sùng"><h3 class="product-name">Sá Sùng</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15808637"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">Liên hệ</span>
-
-                                                </p>
-                                                <p class="p-content"></p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15808637" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <button type="button" class="btn add-cart" title="Chi tiết" onclick="window.location.href=&#39;/sa-sung&#39;">Chi tiết</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-6 p-item">
-
-                                        <div class="wrap-product">
-
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/ghe-boc-vo" title="Ghẹ Tách Vỏ">
-                                                    <img src="{{ url('/') }}/images/ghe-boc-san-dac-san-quang-ninh-dac-san-ha-long-dac-san-chat-1.jpg" alt="Ghẹ Tách Vỏ">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/ghe-boc-vo" data-handle="ghe-boc-vo" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/ghe-boc-vo" title="Ghẹ Tách Vỏ"><h3 class="product-name">Ghẹ Tách Vỏ</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15865919"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">Liên hệ</span>
-
-                                                </p>
-                                                <p class="p-content"></p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15865919" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <button type="button" class="btn add-cart" title="Chi tiết" onclick="window.location.href=&#39;/ghe-boc-vo&#39;">Chi tiết</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-6 p-item">
-
-                                        <div class="wrap-product">
-                                            <span class="dis_per">-7%</span>
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/tom-kho-non" title="Tôm Bóc Nõn">
-                                                    <img src="{{ url('/') }}/images/tom-kho-non-dac-san-chat-3.jpg" alt="Tôm Bóc Nõn">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/tom-kho-non" data-handle="tom-kho-non" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/tom-kho-non" title="Tôm Bóc Nõn"><h3 class="product-name">Tôm Bóc Nõn</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15826937"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">280.000₫</span>
-
-                                                    <span class="line"></span>
-                                                    <span class="first-price">300.000₫</span>
-
-                                                </p>
-                                                <p class="p-content"></p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15826937" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <input type="hidden" name="variantId" value="27674205">
-                                                        <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 big">
                                 <div class="row">
-
+                                    @foreach($cty->getProducts() as $count=>$product)
+                                    @if($count < 5) @continue @endif
+                                    @if($count == 6) @break @endif
                                     <div class="col-xs-12 p-item">
-
                                         <div class="wrap-product">
                                             <span class="dis_per">-5%</span>
                                             <div class="image-product">
-                                                <a href="{{ url('/') }}/ca-thu-khuc-dac-san-quang-ninh" title="Cá Thu Khúc">
-                                                    <img src="{{ url('/') }}/images/ca-thu-mot-nang-dac-san-chat-3-min.jpg" alt="Cá Thu Khúc">
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}">
+                                                    <img src="{{ url('/') }}/images/{{ $product->image }}" alt="{{ $product->name }}">
                                                 </a>
                                                 <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/ca-thu-khuc-dac-san-quang-ninh" data-handle="ca-thu-khuc-dac-san-quang-ninh" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
+                                                    <a href="{{ url('/') }}/product/{{ $product->slug }}" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <a href="{{ url('/') }}/ca-thu-khuc-dac-san-quang-ninh" title="Cá Thu Khúc"><h3 class="product-name">Cá Thu Khúc</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15826930"></div>
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}"><h3 class="product-name">{{ $product->name }}</h3></a>
                                                 <p class="product-price">
-
-                                                    <span class="last-price">380.000₫</span>
-
-                                                    <span class="line"></span>
-                                                    <span class="first-price">400.000₫</span>
-
+                                                    <span class="last-price">{{ number_format(floatval($product->sale), 0, ',', '.') }}đ</span>
+                                                    <span class="first-price">{{ number_format(floatval($product->price), 0, ',', '.') }}đ</span>
                                                 </p>
-                                                <p class="p-content"> CÁ THU MỘT NẮNG Cá Thu thuộc họ cá thu ngừ, sống riêng biệt ở vùng biển cách xa bờ. Cá thu có nhiều loại, nhưng chúng đều sở hữu bản ...</p>
+                                                <p class="p-content"> {{ $product->address }}</p>
                                             </div>
                                             <div class="product-action">
                                                 <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15826930" enctype="multipart/form-data">
@@ -341,164 +221,43 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4">
                                 <div class="row">
-
-                                    <div class="col-xs-6 col-sm-3 col-md-6 p-item">
-
+                                    @foreach($cty->getProducts() as $count=>$product)
+                                    @if($count < 6) @continue @endif
+                                    @if($count == 9) @break @endif
+                                    <div class="col-xs-6 p-item">
                                         <div class="wrap-product">
-                                            <span class="dis_per">-13%</span>
+                                            <span class="dis_per">-8%</span>
                                             <div class="image-product">
-                                                <a href="{{ url('/') }}/cha-hai-san-dac-san-quang-ninh" title="Chả Hải Sản">
-                                                    <img src="{{ url('/') }}/images/cha-hai-san-dac-san-quang-ninh-dac-san-chat-3.jpg" alt="Chả Hải Sản">
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}">
+                                                    <img src="{{ url('/') }}/images/{{ $product->image }}" alt="{{ $product->name }}">
                                                 </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/cha-hai-san-dac-san-quang-ninh" data-handle="cha-hai-san-dac-san-quang-ninh" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
+                                            <div class="area-btn-quickview" data-product-id="{{ $product->id }}">
+                                                    <a href="{{ url('/') }}/product/{{ $product->slug }}" data-handle="{{ $product->name }}" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <a href="{{ url('/') }}/cha-hai-san-dac-san-quang-ninh" title="Chả Hải Sản"><h3 class="product-name">Chả Hải Sản</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15920124"></div>
+                                                <a href="{{ url('/') }}/product/{{ $product->slug }}" title="{{ $product->name }}"><h3 class="product-name">{{ $product->name }}</h3></a>
                                                 <p class="product-price">
-
-                                                    <span class="last-price">130.000₫</span>
-
-                                                    <span class="line"></span>
-                                                    <span class="first-price">150.000₫</span>
-
+                                                    <span class="last-price">{{ number_format(floatval($product->sale), 0, ',', '.') }}đ</span>
+                                                    <span class="first-price">{{ number_format(floatval($product->price), 0, ',', '.') }}đ</span>
                                                 </p>
-                                                <p class="p-content"> CHẢ HẢI SẢN - ĂN MỘT LẦN LẠI MUỐN VỀ QUẢNG NINH Bề bề, tôm là những hải sản có giá trị dinh dưỡng cao. Chả hải sản được chế biế...</p>
+                                                <p class="p-content"> {{ $product->address }}</p>
                                             </div>
                                             <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15920124" enctype="multipart/form-data">
+                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15779770" enctype="multipart/form-data">
                                                     <div class="area-btn-addcart">
-
-                                                        <input type="hidden" name="variantId" value="27956672">
                                                         <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-xs-6 col-sm-3 col-md-6 p-item">
-
-                                        <div class="wrap-product">
-                                            <span class="dis_per">-20%</span>
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/tu-hai" title="Tu Hài Vân Đồn">
-                                                    <img src="{{ url('/') }}/images/tu-hai-quang-ninh-dac-san-chat.jpg" alt="Tu Hài Vân Đồn">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/tu-hai" data-handle="tu-hai" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/tu-hai" title="Tu Hài Vân Đồn"><h3 class="product-name">Tu Hài Vân Đồn</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15820516"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">320.000₫</span>
-
-                                                    <span class="line"></span>
-                                                    <span class="first-price">400.000₫</span>
-
-                                                </p>
-                                                <p class="p-content"> TU HÀI VÂN ĐỒN – HẢI SẢN QUÝ VÙNG BIỂN QUẢNG NINH Trong hàng ngàn sản vật quý của biển cả không thể không nhắc đến tu hài Vân Đồn. Đâ...</p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15820516" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <input type="hidden" name="variantId" value="27657793">
-                                                        <button class="btn add-cart add-cart-mobile add_to_cart" title="Cho vào giỏ hàng">Mua ngay</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-6 col-sm-3 col-md-6 p-item">
-
-                                        <div class="wrap-product">
-
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/oc-huong" title="Ốc Hương">
-                                                    <img src="{{ url('/') }}/images/oc-huong-dac-san-chat.jpg" alt="Ốc Hương">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/oc-huong" data-handle="oc-huong" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/oc-huong" title="Ốc Hương"><h3 class="product-name">Ốc Hương</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15825606"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">Liên hệ</span>
-
-                                                </p>
-                                                <p class="p-content"></p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15825606" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <button type="button" class="btn add-cart" title="Chi tiết" onclick="window.location.href=&#39;/oc-huong&#39;">Chi tiết</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-6 col-sm-3 col-md-6 p-item">
-
-                                        <div class="wrap-product">
-
-                                            <div class="image-product">
-                                                <a href="{{ url('/') }}/hau-bien" title="Hàu Biển">
-                                                    <img src="{{ url('/') }}/images/hau-bien-quang-ninh-dac-san-chat.jpg" alt="Hàu Biển">
-                                                </a>
-                                                <div class="area-btn-quickview">
-
-                                                    <a href="{{ url('/') }}/hau-bien" data-handle="hau-bien" class="quick-view hidden-sm hidden-xs"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="{{ url('/') }}/hau-bien" title="Hàu Biển"><h3 class="product-name">Hàu Biển</h3></a>
-                                                <div class="bizweb-product-reviews-badge" data-id="15820496"></div>
-                                                <p class="product-price">
-
-                                                    <span class="last-price">Liên hệ</span>
-
-                                                </p>
-                                                <p class="p-content"></p>
-                                            </div>
-                                            <div class="product-action">
-                                                <form action="{{ url('/') }}/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-15820496" enctype="multipart/form-data">
-                                                    <div class="area-btn-addcart">
-
-                                                        <button type="button" class="btn add-cart" title="Chi tiết" onclick="window.location.href=&#39;/hau-bien&#39;">Chi tiết</button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

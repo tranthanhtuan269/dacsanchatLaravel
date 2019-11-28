@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use DB;
 
 class City extends Model
 {
@@ -37,8 +38,21 @@ class City extends Model
         'saleoff',
         'active'
     ];
-    
-    public function products(){
-        return $this->hasMany('App\Product');
+
+    public function getProducts(){
+        return DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->join('cities', 'cities.id', '=', 'categories.city_id')
+        ->select(
+            'products.id as id', 
+            'products.slug as slug',
+            'products.name as name',
+            'products.sale as sale',
+            'products.price as price',
+            'products.image as image',
+            'products.unit as unit',
+            'products.address as address'
+            )
+        ->where('city_id', $this->id)->take(9)->get();
     }
 }

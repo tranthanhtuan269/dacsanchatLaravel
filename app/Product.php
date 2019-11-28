@@ -45,15 +45,10 @@ class Product extends Model
         'weight',
         'unit_weight',
         'short_description',
-        'category_id',
-        'city_id'
+        'category_id'
     ];
     
     public function category(){
         return $this->belongsTo('App\Category');
-    }
-
-    public function city(){
-        return $this->belongsTo('App\City');
     }
 }

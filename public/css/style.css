@@ -2777,3 +2777,7 @@ button.btn.btn-default.btn-search {
 div#isp_search_result_page_container form {
 	margin-bottom: 0
 }
+
+.view-more{
+	color: #337ab7;
+}

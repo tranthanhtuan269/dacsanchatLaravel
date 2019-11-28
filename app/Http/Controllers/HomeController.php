@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
         $city = City::where('slug', $slug)->first();
         if($city){
-            $products = Product::where('city_id', $city->id)->paginate(4);
+            $products = Product::paginate(4);
             $cities = City::where('active', 1)->get();
             return view('products', ['city' => $city, 'products' => $products, 'cities' => $cities]);
         }else{
@@ -51,14 +51,5 @@ class HomeController extends Controller
     public function test()
     {
         Excel::import(new ProductsImport, public_path() . '/products_export.xls');
-    }
-
-    public function test2()
-    {
-        $products = Product::get();
-        foreach($products as $product){
-            $product->city_id = $product->category->city_id;
-            $product->save();
-        }
     }
 }
